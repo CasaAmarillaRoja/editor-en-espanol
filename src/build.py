@@ -18,6 +18,9 @@ def datos(f, corte):
     s = io.open(R(f), encoding='utf-8').read()[:None]
     s = s[:s.index(corte)]; ns = {}; exec(compile(s, f, 'exec'), ns); return ns
 G = datos('gen2.py', '\nCHIP=')
+N = len(G['V']) + len(G['A']) + len(G['S'])
+NES = sum(len(v) for v in ES.values())
+NEN = sum(len(v) for v in EN.values())
 def L(s):
     s = re.sub(r'<i>(.*?)</i>', r'*\1*', s); s = re.sub(r'<b>(.*?)</b>', r'**\1**', s)
     s = re.sub(r'<code>(.*?)</code>', r'`\1`', s)
@@ -26,10 +29,10 @@ def L(s):
 NIV = {1: 'NO CONSTA', 2: 'EN PUGNA', 3: 'ACEPTADO'}
 
 def calcos(nivel_titulo='##'):
-    """Los 92 pares con los dos artículos enteros. Devuelve markdown embebible."""
-    o = [f"""{nivel_titulo} Los 92 calcos, con los dos artículos completos
+    """Los pares con los dos artículos enteros. Devuelve markdown embebible."""
+    o = [f"""{nivel_titulo} Los {N} calcos, con los dos artículos completos
 
-Cada par lleva **el artículo entero de los dos diccionarios** — Cambridge para el
+Son {N} pares. Cada uno lleva **el artículo entero de los dos diccionarios** — Cambridge para el
 inglés, DLE para el español — y la acepción en juego marcada con `←`.
 
 Van completos porque el resumen miente por omisión. Casi todas estas palabras son
@@ -69,20 +72,24 @@ palabra acusada, para que la cura no esté dentro de la enfermedad.
 
 # ---------- 1. SKILL.md de la suelta: calcos dentro ----------
 f = os.path.join(SKILL, 'SKILL.md'); s = io.open(f, encoding='utf-8').read()
-s = re.sub(r'\n## Los 92 calcos.*?(?=\n## Referencias)', '\n', s, flags=re.S)
+s = re.sub(r'\n## Los \d+ calcos.*?(?=\n## Referencias)', '', s, flags=re.S)
 marca = '\n## Referencias'
 assert marca in s
 s = s.replace(marca, '\n' + calcos('##') + marca)
 # la tabla de referencias ya no menciona ficheros de calcos
 s = re.sub(r'\n\| `references/calcos[^\n]*\|', '', s)
+s = re.sub(r'\n{3,}', '\n\n', s)
 io.open(f, 'w', encoding='utf-8').write(s)
 print('SKILL.md (suelta)      %6.1f KB' % (len(s)/1024))
 
 # ---------- 2. ES-CARD.md del plugin: calcos completos, no la tabla ----------
 f = os.path.join(PLUGIN, 'ES-CARD.md'); s = io.open(f, encoding='utf-8').read()
-ini = s.index('\n## Falsos amigos')
-fin = s.index('\n## Cursiva, comillas o redonda')
+# idempotente: casa la cabecera original y la ya generada
+m = re.search(r'\n## (?:Falsos amigos|Los \d+ calcos)', s)
+assert m, 'no encuentro la sección de calcos en ES-CARD.md'
+ini, fin = m.start(), s.index('\n## Cursiva, comillas o redonda')
 s = s[:ini] + '\n' + calcos('##') + s[fin:]
+s = re.sub(r'\n{3,}', '\n\n', s)
 io.open(f, 'w', encoding='utf-8').write(s)
 print('ES-CARD.md (plugin)    %6.1f KB' % (len(s)/1024))
 
@@ -91,3 +98,26 @@ for p in (os.path.join(SKILL, 'references/calcos-del-ingles.md'),
           os.path.join(SKILL, 'references/calcos-completos.md'),
           os.path.join(PLUGIN, 'calcos-completos.md')):
     if os.path.exists(p): os.remove(p); print('borrado  %s' % p.replace(H, '~'))
+
+# ---------- 4. los conteos citados a mano, derivados ----------
+def contar(ruta, sust):
+    p = os.path.join(*ruta); t = io.open(p, encoding='utf-8').read(); o = t
+    for pat, rep in sust:
+        t = re.sub(pat, rep, t)
+    if t != o:
+        io.open(p, 'w', encoding='utf-8').write(t); print('conteos  %s' % p.replace(H, '~'))
+
+nums = [(r'\b\d+ calcos\b', '%d calcos' % N),
+        (r'\bLos \d+ calcos\b', 'Los %d calcos' % N),
+        (r'\blos \d+ calcos\b', 'los %d calcos' % N),
+        (r'\blos \d+ falsos amigos\b', 'los %d falsos amigos' % N),
+        (r'\b\d+ pares\b', '%d pares' % N),
+        (r'\b\d+ acepciones en total\b', '%d acepciones en total' % (NES + NEN)),
+        (r'\b\d+ acepciones del DLE\b', '%d acepciones del DLE' % NES),
+        (r'\b\d+ acepciones de Cambridge\b', '%d acepciones de Cambridge' % NEN),
+        (r'\b\d+ del DLE y \d+ de Cambridge\b', '%d del DLE y %d de Cambridge' % (NES, NEN)),
+        (r'\b\d+ acepciones\b(?=\.)', '%d acepciones' % (NES + NEN))]
+for ruta in ((SKILL, 'SKILL.md'), (SKILL, 'README.md'),
+             (PLUGIN, 'SKILL.md'), (PLUGIN, 'ES-CARD.md')):
+    contar(ruta, nums)
+print('\ntotales: %d pares · %d acepciones DLE · %d Cambridge' % (N, NES, NEN))

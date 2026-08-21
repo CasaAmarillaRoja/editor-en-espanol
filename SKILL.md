@@ -58,7 +58,7 @@ Concordancia, pronombres (leísmo, laísmo, loísmo), gerundio, `hubieron`, que�
 dequeísmo, relativos, `cuyo`, negación. Aquí abunda el `AMBAS`: lee el veredicto antes
 de tocar nada.
 
-**5 · Calco del inglés** → la sección «Los 92 calcos» de este mismo documento, y `references/marcas-de-traduccion.md`
+**5 · Calco del inglés** → la sección «Los 93 calcos» de este mismo documento, y `references/marcas-de-traduccion.md`
 Los calcos van aquí dentro y no en una referencia aparte, a propósito: la mitad de estos errores no producen duda, así que nada te va a empujar a abrir un fichero. Si has cargado esta skill, ya los has leído.
 Solo si el texto puede venir del inglés. Dos mitades: los calcos léxicos, palabra por
 palabra con su acepción; y las marcas ortotipográficas y sintácticas, que valen más
@@ -93,9 +93,9 @@ Si no hay nada en una lista, quítala. No rellenes con hallazgos flojos para abu
 informe: un hallazgo dudoso presentado como firme te cuesta la credibilidad de los
 veinte que sí lo eran.
 
-## Los 92 calcos, con los dos artículos completos
+## Los 93 calcos, con los dos artículos completos
 
-Cada par lleva **el artículo entero de los dos diccionarios** — Cambridge para el
+Son 93 pares. Cada uno lleva **el artículo entero de los dos diccionarios** — Cambridge para el
 inglés, DLE para el español — y la acepción en juego marcada con `←`.
 
 Van completos porque el resumen miente por omisión. Casi todas estas palabras son
@@ -112,7 +112,6 @@ legítimo hace más daño que dejar pasar el calco.
 
 Los recambios están cotejados contra la lista de sinónimos que el DLE publica para la
 palabra acusada, para que la cura no esté dentro de la enfermedad.
-
 
 ### Verbos
 
@@ -575,7 +574,6 @@ palabra acusada, para que la cura no esté dentro de la enfermedad.
 - 5. tr. Inform. Modificar un documento o archivo. ←
 
 **Escribe:** no hace falta cambiar nada
-
 
 ### Adjetivos y adverbios
 
@@ -1169,7 +1167,6 @@ palabra acusada, para que la cura no esté dentro de la enfermedad.
 - 2. adj. Impredecible o que cambia con frecuencia. ←
 
 **Escribe:** no hace falta cambiar nada
-
 
 ### Sustantivos
 

@@ -28,7 +28,7 @@ Copia la carpeta en `~/.claude/skills/editor-en-espanol/`. Se invoca con
 
 | Fichero | Qué lleva |
 |---|---|
-| `SKILL.md` | El procedimiento y **los 92 calcos con los dos artículos de diccionario enteros** — 792 acepciones. Van dentro, no en una referencia aparte: lo que el modelo tiene que decidir abrir no se abre |
+| `SKILL.md` | El procedimiento y **los 93 calcos con los dos artículos de diccionario enteros** — 792 acepciones. Van dentro, no en una referencia aparte: lo que el modelo tiene que decidir abrir no se abre |
 | `references/norma-ortotipografia.md` | Acentuación, coma, comillas, raya, mayúsculas, cifras, espacios, diálogos |
 | `references/norma-gramatica.md` | Concordancia, pronombres, verbo, relativos, grafías confundibles |
 | `references/cursiva-y-comillas.md` | 56 casos: cursiva, «comillas», redonda o sin resalte |
