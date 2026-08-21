@@ -1,0 +1,185 @@
+<title>Cursiva o comillas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#F7F7F4; --surface:#FFFFFF; --surface2:#FBFBF9;
+    --ink:#17181D; --ink-soft:#474B55; --ink-faint:#6C707A;
+    --rule:#DEDDD7; --rule-soft:#EBEAE5;
+    --cur:#23407A; --cur-bg:#E7EBF3;
+    --com:#8A5A2B; --com-bg:#F3EBE1;
+    --red:#5B6470; --red-bg:#E9ECEF;
+    --err:#A4232B; --err-bg:#F7E8E8;
+    --measure:64ch; --wide:1180px;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#14151A; --surface:#1B1D23; --surface2:#191B20;
+    --ink:#E9E7E2; --ink-soft:#B3B7BE; --ink-faint:#8A8E97;
+    --rule:#2E3138; --rule-soft:#24272D;
+    --cur:#8FA9DC; --cur-bg:#1D2436;
+    --com:#D3A268; --com-bg:#2C2317;
+    --red:#9BA7B5; --red-bg:#22262C;
+    --err:#E7737A; --err-bg:#33201F;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#14151A; --surface:#1B1D23; --surface2:#191B20;
+    --ink:#E9E7E2; --ink-soft:#B3B7BE; --ink-faint:#8A8E97;
+    --rule:#2E3138; --rule-soft:#24272D;
+    --cur:#8FA9DC; --cur-bg:#1D2436;
+    --com:#D3A268; --com-bg:#2C2317;
+    --red:#9BA7B5; --red-bg:#22262C;
+    --err:#E7737A; --err-bg:#33201F;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .shell{max-width:var(--wide);margin:0 auto;padding:0 28px 100px}
+  header.top{padding:76px 0 38px;border-bottom:2px solid var(--ink);display:flex;flex-direction:column;gap:20px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--com)}
+  h1{font-family:Faustina,Georgia,serif;font-weight:700;font-size:clamp(2.4rem,6.2vw,4rem);
+    line-height:1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+  h1 em{font-style:italic;font-weight:400;color:var(--cur)}
+  .standfirst{font-family:Faustina,Georgia,serif;font-size:clamp(1.12rem,2.2vw,1.34rem);
+    line-height:1.5;color:var(--ink-soft);max-width:62ch;margin:0}
+  h2{font-family:Faustina,Georgia,serif;font-weight:600;font-size:clamp(1.4rem,3vw,1.85rem);
+    line-height:1.15;margin:0;letter-spacing:-.01em}
+  h3{font-family:"IBM Plex Sans",sans-serif;font-size:.92rem;font-weight:600;letter-spacing:.05em;
+    text-transform:uppercase;margin:0;color:var(--ink)}
+  section{padding-top:56px;display:flex;flex-direction:column;gap:18px;scroll-margin-top:20px}
+  p{margin:0}
+  .col{max-width:var(--measure)}
+  .col p+p{margin-top:.8em}
+  a{color:var(--com);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--com);outline-offset:2px;border-radius:2px}
+  b,strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.92em}
+
+  .principio{border-left:3px solid var(--cur);padding:6px 0 6px 22px;
+    font-family:Faustina,Georgia,serif;font-size:1.28rem;line-height:1.42;max-width:56ch}
+  .aviso{border:1px solid var(--err);background:var(--err-bg);padding:22px 24px;
+    display:flex;flex-direction:column;gap:12px;max-width:74ch}
+  .aviso .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--err);font-weight:500}
+  .aviso p{font-size:15.5px;line-height:1.55}
+  .aviso code{background:var(--surface);padding:1px 5px}
+
+  .llave{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media(min-width:760px){.llave{grid-template-columns:repeat(4,1fr)}}
+  .llave>div{background:var(--surface);padding:16px 18px;display:flex;flex-direction:column;gap:7px}
+  .llave .dchip{align-self:flex-start}
+  .llave p{font-size:14px;line-height:1.45;color:var(--ink-soft)}
+
+  .nav{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media(min-width:700px){.nav{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.nav{grid-template-columns:repeat(4,1fr)}}
+  .nav a{background:var(--surface);padding:12px 16px;text-decoration:none;color:var(--ink);
+    font-size:14.5px;display:flex;align-items:baseline;gap:10px;font-weight:500}
+  .nav a:hover{background:var(--com-bg);color:var(--com)}
+  .nav .tn{font-family:"IBM Plex Mono",monospace;font-size:11px;color:var(--ink-faint);
+    min-width:2ch;text-align:right;font-variant-numeric:tabular-nums}
+
+  .scroller{overflow-x:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+  table{width:100%;border-collapse:collapse;min-width:720px}
+  thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;font-weight:400;color:var(--ink-faint);text-align:left;
+    padding:11px 18px 11px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+  tbody td{padding:14px 18px 14px 0;vertical-align:top;border-bottom:1px solid var(--rule-soft)}
+  tbody tr:last-child td{border-bottom:none}
+  td:last-child,th:last-child{padding-right:0}
+  .cosa{font-size:15px;font-weight:500;max-width:26ch;line-height:1.35}
+  .der{display:block;font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;color:var(--com);margin-top:5px;font-weight:500}
+  td.dest{width:1%;white-space:nowrap}
+  .dchip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.08em;
+    padding:3px 8px;white-space:nowrap;font-weight:500;display:inline-block}
+  .d-cur{background:var(--cur-bg);color:var(--cur)}
+  .d-com{background:var(--com-bg);color:var(--com)}
+  .d-red{background:var(--red-bg);color:var(--red)}
+  .d-sim{background:var(--com-bg);color:var(--com)}
+  .d-nun{background:var(--err-bg);color:var(--err)}
+  .ej{font-family:Faustina,Georgia,serif;font-size:16px;line-height:1.4;color:var(--ink)}
+  .ej .nota{display:block;font-family:"IBM Plex Sans",sans-serif;font-size:13.5px;
+    color:var(--ink-faint);margin-top:6px;line-height:1.45}
+  .ej .nota b{color:var(--ink-soft)}
+
+  .bloques{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media(min-width:860px){.bloques{grid-template-columns:repeat(2,1fr)}}
+  .bloque{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:11px}
+  .bloque p{font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+  .bloque .demo{font-family:Faustina,Georgia,serif;font-size:16px;line-height:1.55;
+    background:var(--surface2);padding:12px 14px;color:var(--ink);white-space:pre-line}
+
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--rule);font-size:14px;
+    color:var(--ink-faint);max-width:var(--measure);display:flex;flex-direction:column;gap:10px}
+  footer a{color:var(--ink-soft)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="shell">
+<header class="top">
+  <div class="eyebrow">Ortotipografía · Español</div>
+  <h1>Cursiva o <em>comillas</em></h1>
+  <p class="standfirst">{{N}} casos resueltos: qué se pone en cursiva, qué entre comillas, qué en redonda y qué no se marca de ninguna manera.</p>
+</header>
+
+<section id="principio">
+  <h2>La regla madre</h2>
+  <p class="principio">La obra completa va en <span style="color:var(--cur)"><i>cursiva</i></span>. La pieza que vive dentro de otra obra va entre <span style="color:var(--com)">«comillas»</span>.</p>
+  <div class="col">
+    <p>Con eso se resuelve el noventa por ciento de las dudas. El libro en cursiva, el capítulo entre comillas. El disco en cursiva, la canción entre comillas. La revista en cursiva, el artículo entre comillas.</p>
+    <p>Y hay un corolario que se olvida: <strong>si la mayúscula ya delimita la extensión del título, la cursiva sobra</strong>. Por eso <i>el Código Civil</i>, <i>la Biblia</i> y <i>Alianza Universidad</i> van en redonda: llevan mayúscula en todas las palabras significativas y no hace falta marcarlos dos veces.</p>
+  </div>
+  <div class="llave">
+    <div><span class="dchip d-cur">cursiva</span><p>Obra completa, extranjerismo crudo, la palabra de la que se habla.</p></div>
+    <div><span class="dchip d-com">«comillas»</span><p>Pieza dependiente, cita, acto, lema.</p></div>
+    <div><span class="dchip d-red">redonda</span><p>Nombres propios, siglas, marcas, y todo lo que la mayúscula ya delimita.</p></div>
+    <div><span class="dchip d-nun">sin resalte</span><p>La cita indirecta no se marca de ninguna manera.</p></div>
+  </div>
+  <div class="nav">{{NAV}}</div>
+</section>
+
+<section id="angulares">
+  <h2>Las comillas angulares</h2>
+  <div class="aviso">
+    <span class="lab">Sobre el «siempre»</span>
+    <p>Como regla de la casa, usar <code>« »</code> siempre y sin excepción es una decisión buena y la he aplicado en todo este documento. Pero conviene que sepas qué dice exactamente la norma, porque no es lo mismo y afecta a cómo puedes corregir a otros.</p>
+    <p>La RAE <b>recomienda</b> las angulares en primera instancia. No prohíbe las inglesas en primer lugar: el <i>Libro de estilo</i> dice literalmente que «esto no quiere decir que el uso de las comillas inglesas en primer lugar sea incorrecto», sobre todo si hay limitaciones técnicas. Así que quien escriba <code>“cita”</code> como nivel exterior no está infringiendo la norma, está desoyendo una recomendación.</p>
+    <p><b>Lo que sí es obligatorio es el orden de anidamiento</b>, y ahí no hay margen: angulares fuera, inglesas dentro, simples en último lugar. Empezar por las simples, o meter angulares dentro de inglesas, sí es un error.</p>
+    <p>Para tu caso concreto tienes una cita mejor que la RAE: el <b>Manual de estilo de Wikipedia en español</b> sí establece la preferencia por las angulares siguiendo al <i>DPD</i>. Ahí el «siempre» se sostiene por convención del proyecto.</p>
+  </div>
+  <div class="bloques">
+    <div class="bloque"><h3>El orden, con los tres niveles</h3>
+      <div class="demo">«Antonio me dijo: “Vaya ‘cacharro’ se ha comprado Julián”»</div>
+      <p>Angulares, luego inglesas, luego simples. Si coinciden varios cierres, se mantienen todos.</p></div>
+    <div class="bloque"><h3>Comillas de continuación</h3>
+      <div class="demo">«En el año 409 un conglomerado de pueblos germánicos […].
+»Así quedó cumplida la amenaza que venía pesando desde el Rhin».</div>
+      <p>En una cita de varios párrafos, cada párrafo siguiente abre con <code>»</code> — la de cierre, no la de apertura. Se llaman <i>comillas de seguir</i>. <b>Fíjate en el final:</b> el punto va fuera del cierre, como siempre. Hoy es más común sangrar la cita en bloque, y entonces no hacen falta comillas.</p></div>
+    <div class="bloque"><h3>Comentario dentro de la cita</h3>
+      <div class="demo">«Es imprescindible —señaló el ministro— que se refuercen los controles»</div>
+      <p>El comentario de quien transcribe va entre rayas, <b>sin cerrar y reabrir las comillas</b>.</p></div>
+    <div class="bloque"><h3>Dónde va el punto</h3>
+      <div class="demo">Sus palabras fueron: «No lo haré».
+«¿Dónde te crees que vas?». Esa pregunta lo detuvo.</div>
+      <p>Punto, coma, punto y coma y dos puntos siempre <b>después</b> del cierre. Y el punto no se omite aunque delante haya interrogación, exclamación o puntos suspensivos.</p></div>
+    <div class="bloque"><h3>Puntos suspensivos: de quién son</h3>
+      <div class="demo">Ya lo dijo Arquímedes: «Dadme un punto de apoyo…».
+Siempre las mismas excusas: «no me ha dado tiempo»; «se me ha olvidado»…</div>
+      <p>Si lo omitido está dentro de la cita, van dentro. Si lo omitido es del discurso principal, van fuera.</p></div>
+    <div class="bloque"><h3>Cuando no hay cursiva</h3>
+      <div class="demo">En manuscrito: la palabra «cándido» es esdrújula</div>
+      <p>Las comillas sustituyen a la cursiva en manuscritos y soportes que no la admiten. En mensajería, el guion bajo marca cursiva y el asterisco negrita.</p></div>
+  </div>
+</section>
+
+{{BODY}}
+
+<footer>
+  <p>Fuentes del corpus local: <i>Clase de letra</i> y <i>Citas</i> (ortotipografía), <i>Puntuación</i> §49-58, <i>Mayúsculas</i> §28-30 y la entrada <i>Comillas</i> del <i>Diccionario panhispánico de dudas</i>. Todas ellas recogen el <i>Libro de estilo de la lengua española</i> de la RAE-ASALE.</p>
+  <p>Las filas marcadas <b>deducido</b> aplican la regla madre a casos que el corpus no nombra: no trata la música, la ópera, la escultura ni los episodios de serie. El principio es el mismo, pero la atribución es mía, no de la RAE.</p>
+  <p>Compañeros de estantería: <a href="https://claude.ai/code/artifact/14a12bb4-a995-44ba-aba6-9ede34b9ea0c">Manual de dudas</a>, <a href="https://claude.ai/code/artifact/a0707d30-d025-4dac-8dbd-fbae262979a5">Anglicismos delatores</a> y <a href="https://claude.ai/code/artifact/4940c97b-6b8e-4deb-b619-33c565b5166e">Ortotipografía delatora</a>.</p>
+</footer>
+</div>

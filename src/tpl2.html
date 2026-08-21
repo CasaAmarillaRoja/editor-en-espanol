@@ -1,0 +1,285 @@
+<title>Anglicismos delatores</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap">
+
+<style>
+  :root{
+    --paper:#F8F8F5; --surface:#FFFFFF;
+    --ink:#16181C; --ink-soft:#4A4E57; --ink-faint:#6E7179;
+    --rule:#DEDDD6; --rule-soft:#EAE9E3;
+    --red:#A4232B; --red-bg:#F6E7E7;
+    --ochre:#8A6A1F; --ochre-bg:#F4EDDC;
+    --slate:#5B6470; --slate-bg:#E9ECEF;
+    --measure:66ch; --wide:1400px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --paper:#14151A; --surface:#1B1D23;
+      --ink:#E9E7E2; --ink-soft:#B4B7BE; --ink-faint:#8B8F98;
+      --rule:#2E3138; --rule-soft:#24272D;
+      --red:#E7737A; --red-bg:#33201F;
+      --ochre:#D9AC52; --ochre-bg:#2E2617;
+      --slate:#9BA7B5; --slate-bg:#22262C;
+    }
+  }
+  :root[data-theme="dark"]{
+    --paper:#14151A; --surface:#1B1D23;
+    --ink:#E9E7E2; --ink-soft:#B4B7BE; --ink-faint:#8B8F98;
+    --rule:#2E3138; --rule-soft:#24272D;
+    --red:#E7737A; --red-bg:#33201F;
+    --ochre:#D9AC52; --ochre-bg:#2E2617;
+    --slate:#9BA7B5; --slate-bg:#22262C;
+  }
+
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+  .shell{max-width:var(--wide);margin:0 auto;padding:0 28px 96px}
+  .col{max-width:var(--measure)}
+
+  header{padding:72px 0 40px;border-bottom:2px solid var(--ink);display:flex;flex-direction:column;gap:22px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;
+    letter-spacing:.16em;text-transform:uppercase;color:var(--red)}
+  h1{font-family:Faustina,Georgia,serif;font-weight:700;
+    font-size:clamp(2.5rem,6.5vw,4.1rem);line-height:1.02;
+    letter-spacing:-.02em;margin:0;text-wrap:balance}
+  h1 em{font-style:italic;font-weight:400;color:var(--red)}
+  .standfirst{font-family:Faustina,Georgia,serif;font-size:clamp(1.13rem,2.2vw,1.36rem);
+    line-height:1.5;color:var(--ink-soft);max-width:60ch;margin:0}
+
+  section{padding-top:56px;display:flex;flex-direction:column;gap:20px}
+  h2{font-family:Faustina,Georgia,serif;font-weight:600;
+    font-size:clamp(1.5rem,3.2vw,2rem);line-height:1.15;margin:0;
+    letter-spacing:-.01em;text-wrap:balance}
+  h2 .num{font-family:"IBM Plex Mono",monospace;font-size:.62em;font-weight:400;
+    color:var(--ink-faint);margin-right:.7em;letter-spacing:0}
+  p{margin:0}
+  .col p + p{margin-top:.85em}
+  a{color:var(--red);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--red);outline-offset:2px;border-radius:2px}
+  strong,b{font-weight:600}
+  code,.mono{font-family:"IBM Plex Mono",monospace}
+
+  .mk-en{background:var(--ochre-bg);color:var(--ochre);padding:1px 5px;font-weight:600}
+  .mk-es{background:var(--slate-bg);color:var(--slate);padding:1px 5px;font-weight:600}
+  .pull{border-left:3px solid var(--red);padding:4px 0 4px 22px;
+    font-family:Faustina,Georgia,serif;font-size:1.22rem;line-height:1.45;
+    color:var(--ink);max-width:56ch}
+
+  .fix-note{border:1px solid var(--red);background:var(--red-bg);
+    padding:22px 24px;display:flex;flex-direction:column;gap:12px;max-width:76ch}
+  .fix-note .lab{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--red);font-weight:500}
+  .fix-note p{font-size:15.5px;line-height:1.55;color:var(--ink)}
+  .fix-note code{background:var(--surface);padding:1px 5px;font-size:14px}
+
+  .key{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:12px}
+  @media(min-width:760px){.key{grid-template-columns:repeat(3,1fr)}}
+  .key > div{background:var(--surface);padding:18px 20px;display:flex;flex-direction:column;gap:7px}
+  .key .chip{align-self:flex-start}
+  .key p{font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;padding:3px 7px;white-space:nowrap;font-weight:500}
+  .t1{background:var(--red-bg);color:var(--red)}
+  .t2{background:var(--ochre-bg);color:var(--ochre)}
+  .t3{background:var(--slate-bg);color:var(--slate)}
+
+  .scroller{overflow-x:auto;border-top:1px solid var(--ink);border-bottom:1px solid var(--rule)}
+  table{width:100%;border-collapse:collapse;font-size:15px;min-width:1240px}
+  thead th{font-family:"IBM Plex Mono",monospace;font-size:10.5px;letter-spacing:.11em;
+    text-transform:uppercase;font-weight:400;color:var(--ink-faint);text-align:left;
+    padding:12px 18px 12px 0;border-bottom:1px solid var(--rule);white-space:nowrap}
+  tbody td{padding:18px 20px 18px 0;vertical-align:top;
+    border-bottom:1px solid var(--rule-soft);line-height:1.45}
+  tbody tr:last-child td{border-bottom:none}
+  td:last-child,th:last-child{padding-right:0}
+  .term{white-space:nowrap;min-width:17ch}
+  .term .chip{display:inline-block;margin-top:9px}
+  .term code{font-size:15px;font-weight:500;color:var(--ink)}
+  .term .src{display:block;font-family:"IBM Plex Mono",monospace;font-size:12.5px;
+    font-style:italic;color:var(--ink-faint);margin-top:3px}
+  td.dic{max-width:44ch;min-width:30ch}
+  ol.senses{margin:0;padding-left:1.6em;display:flex;flex-direction:column;gap:5px}
+  ol.senses li{font-size:13.5px;line-height:1.42;color:var(--ink-faint)}
+  td.dic.en ol.senses li{font-family:"IBM Plex Sans",sans-serif}
+  td.dic.es ol.senses li{font-family:Faustina,Georgia,serif;font-size:14px}
+  ol.senses li.hit{color:var(--ink);font-weight:500;
+    background:var(--ochre-bg);box-shadow:-6px 0 0 var(--ochre),0 0 0 3px var(--ochre-bg)}
+  td.dic.es ol.senses li.hit{background:var(--slate-bg);box-shadow:-6px 0 0 var(--slate),0 0 0 3px var(--slate-bg)}
+  .nohit{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--red);
+    letter-spacing:.04em;text-transform:uppercase;margin-bottom:9px;
+    padding:4px 7px;background:var(--red-bg);display:inline-block}
+  .fix{color:var(--ink);max-width:24ch;min-width:18ch;font-size:14.5px}
+  .dash{color:var(--ink-faint)}
+  td.lvl{width:1%;white-space:nowrap}
+  .note{display:block;font-size:13px;color:var(--ink-faint);
+    font-style:italic;margin-top:6px;font-family:Faustina,Georgia,serif;line-height:1.4}
+
+  .figs{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .fig{background:var(--surface);padding:16px 20px;display:flex;flex-wrap:wrap;gap:6px 26px;align-items:baseline}
+  .fig .en{font-family:"IBM Plex Mono",monospace;font-size:13.5px;font-style:italic;color:var(--ink-faint);min-width:11ch}
+  .fig .bad{font-family:"IBM Plex Mono",monospace;font-weight:500;color:var(--red);font-variant-numeric:tabular-nums}
+  .fig .good{font-family:"IBM Plex Mono",monospace;font-weight:500;font-variant-numeric:tabular-nums}
+  .fig .arrow{color:var(--ink-faint)}
+  .fig .why{font-size:13.5px;color:var(--ink-soft);flex-basis:100%}
+  .fig .why b{color:var(--red);font-weight:600}
+
+  ul.plain{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:13px}
+  ul.plain li{padding-left:22px;position:relative;color:var(--ink-soft);font-size:15.5px;line-height:1.5}
+  ul.plain li::before{content:"";position:absolute;left:0;top:.62em;width:9px;height:1px;background:var(--red)}
+  ul.plain li b{color:var(--ink);font-weight:600}
+
+  footer{margin-top:72px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:14px;color:var(--ink-faint);max-width:var(--measure);
+    display:flex;flex-direction:column;gap:10px}
+  footer a{color:var(--ink-soft)}
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<div class="shell">
+
+<header>
+  <div class="eyebrow">Detección de texto generado por IA · Español · Parte I</div>
+  <h1>Anglicismos <em>delatores</em></h1>
+  <p class="standfirst">Los calcos semánticos que un modelo produce al pensar en inglés y escribir en español. Cada fila trae los dos artículos de diccionario completos —Cambridge y DLE— con la acepción en juego resaltada.</p>
+</header>
+
+<section>
+  <h2><span class="num">01</span>Cómo se lee cada fila</h2>
+  <div class="col">
+    <p>Un falso amigo no es un par de palabras: es un par <strong>más una acepción concreta</strong>. Por eso la tabla trae los dos artículos de diccionario enteros, uno al lado del otro, y no un resumen.</p>
+    <p>En la columna inglesa, <span class="mk-en">resaltada en ocre</span>, está la acepción que el modelo intenta traducir. En la columna española, <span class="mk-es">resaltada en gris</span>, la acepción que la ampara — si existe. Cuando ninguna la ampara, la columna lo dice en rojo y ahí está el error.</p>
+    <p>Esto importa porque casi todas estas palabras son polisémicas y <strong>parte de su campo inglés sí existe en español</strong>. <code>dramatic</code> tiene tres sentidos y el español cubre dos: «relating to plays and acting» es la acepción 1 de <code>dramático</code>, y «full of action and excitement» la 5. Solo falta «very sudden or noticeable». Con las dos listas delante se ve de un golpe qué se puede señalar y qué no; con un resumen, no.</p>
+    <p>La cuarta columna da el recambio, cotejado contra la lista de sinónimos que el DLE publica para la palabra acusada. Sin ese cotejo se cuela lo circular: <code>espectacular</code> parece un buen sustituto de <code>dramático</code> hasta que ves que el DLE lo lista como su sinónimo.</p>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">02</span>El criterio, y sus dos ejes</h2>
+  <div class="col">
+    <p>El <a href="https://es.wikipedia.org/wiki/Anexo:Falsos_amigos">Anexo:Falsos amigos</a> de Wikipedia tiene más de cuatrocientos pares y casi ninguno sirve aquí: <code>avocado</code>/abogado o <code>embarrassed</code>/embarazada son coincidencias fonéticas que engañan a quien aprende el idioma. Un modelo traduce esas palabras bien.</p>
+    <p>Lo que sí produce responde a un patrón: <strong>raíz latina compartida más deriva semántica</strong>. Dos palabras del mismo étimo que han divergido, y el modelo las trata como equivalentes.</p>
+    <p class="pull">Un falso amigo engaña al que aprende. Un calco semántico engaña al que revisa. Y un recambio sin comprobar engaña al que corrige.</p>
+    <p>Los niveles responden a un hecho comprobable, no a mi opinión: <strong>¿está recogida la acepción inglesa?</strong> Pero hay <em>dos</em> ejes aquí y el diccionario solo arbitra uno. El DLE dice si algo es un error; <strong>no dice si un modelo lo produce</strong>, y para detectar hace falta lo segundo.</p>
+    <p>Eso significa que una palabra puede ser un calco de manual y no aparecer jamás en texto generado, porque el modelo traduce ese término bien. Las entradas de esta tabla están elegidas por lo que aparece en traducción real, y ese juicio no lo respalda ningún diccionario: es mío. Si ves una que no hayas encontrado nunca, desconfía de ella.</p>
+  </div>
+  <div class="key">
+    <div><span class="chip t1">no consta</span>
+      <p>La acepción inglesa <b>no está</b> en el DLE. Error defendible ante cualquier editor.</p></div>
+    <div><span class="chip t2">en pugna</span>
+      <p>El DLE la recoge, pero restringida a un campo o a una región, o el DPD la censura. Delata por frecuencia, no por error.</p></div>
+    <div><span class="chip t3">aceptado</span>
+      <p>Recogida sin reservas, o respaldada por los sinónimos del propio DLE. <b>No la señales nunca.</b></p></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">03</span>Verbos</h2>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>El par</th><th>Cambridge · la palabra inglesa completa</th><th>DLE · la palabra española completa</th><th>Escribe esto en su lugar</th></tr></thead>
+    <tbody>
+{{VERBOS}}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">04</span>Adjetivos y adverbios</h2>
+  <p class="col">Aquí está la «voz» del modelo: la prosa que suena traducida sin que puedas señalar dónde. Los adverbios en <code>-mente</code> delatan especialmente, porque el inglés los usa como conectores de foco y el español no.</p>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>El par</th><th>Cambridge · la palabra inglesa completa</th><th>DLE · la palabra española completa</th><th>Escribe esto en su lugar</th></tr></thead>
+    <tbody>
+{{ADJ}}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">05</span>Sustantivos</h2>
+  <div class="scroller">
+  <table>
+    <thead><tr><th>El par</th><th>Cambridge · la palabra inglesa completa</th><th>DLE · la palabra española completa</th><th>Escribe esto en su lugar</th></tr></thead>
+    <tbody>
+{{SUST}}
+    </tbody>
+  </table>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">06</span>Locuciones</h2>
+  <p class="col">No son entradas de diccionario, así que el DLE no las arbitra. Son estructuras inglesas vestidas de español, y por eso sobreviven a más pasadas de revisión que ninguna palabra suelta.</p>
+  <div class="figs">
+    <div class="fig"><span class="en">make sense</span><span class="bad">hacer sentido</span><span class="arrow">→</span><span class="good">tener sentido</span>
+      <span class="why">El español no «hace» el sentido: lo tiene.</span></div>
+    <div class="fig"><span class="en">based in</span><span class="bad">basado en Madrid</span><span class="arrow">→</span><span class="good">con sede en Madrid</span>
+      <span class="why">Confunde el fundamento con el domicilio.</span></div>
+    <div class="fig"><span class="en">in order to</span><span class="bad">en orden de</span><span class="arrow">→</span><span class="good">para, con el fin de</span>
+      <span class="why">Traducción literal de una perífrasis final.</span></div>
+    <div class="fig"><span class="en">be supposed to</span><span class="bad">estar supuesto a</span><span class="arrow">→</span><span class="good">se supone que, deber</span>
+      <span class="why">La RAE la señala como ajena al español general.</span></div>
+    <div class="fig"><span class="en">according to</span><span class="bad">de acuerdo a</span><span class="arrow">→</span><span class="good">de acuerdo con, según</span>
+      <span class="why">Régimen preposicional incorrecto.</span></div>
+    <div class="fig"><span class="en">adhere to</span><span class="bad">adherirse a una norma</span><span class="arrow">→</span><span class="good">cumplir, acatar, atenerse a</span>
+      <span class="why">Uno se adhiere a una causa, no a un reglamento.</span></div>
+    <div class="fig"><span class="en">assuming that</span><span class="bad">asumiendo que</span><span class="arrow">→</span><span class="good">suponiendo que</span>
+      <span class="why">Arrastra el calco de <i>asumir</i>, que sí está confirmado.</span></div>
+    <div class="fig"><span class="en">serve as</span><span class="bad">servir como</span><span class="arrow">→</span><span class="good">ser, hacer de, ejercer de</span>
+      <span class="why">Rodeo para no usar el verbo <i>ser</i>. La huida de la cópula es señal por sí misma.</span></div>
+    <div class="fig"><span class="en">when it comes to</span><span class="bad">cuando se trata de</span><span class="arrow">→</span><span class="good">en materia de, a la hora de</span>
+      <span class="why">Fórmula de transición sin contenido.</span></div>
+    <div class="fig"><span class="en">a testament to</span><span class="bad">un testimonio de</span><span class="arrow">→</span><span class="good">una muestra, una prueba de</span>
+      <span class="why">Fórmula encomiástica de manual.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">07</span>Cifras y unidades</h2>
+  <div class="col">
+    <p>La categoría más valiosa: aquí el calco no produce mala prosa, produce <strong>un error factual verificable</strong>. En un artículo de Wikipedia, un <code>billón</code> mal traducido falsea el dato por un factor de mil, y se corrige contra la fuente sin discutir de estilo.</p>
+  </div>
+  <div class="figs">
+    <div class="fig"><span class="en">billion</span><span class="bad">billón</span><span class="arrow">→</span><span class="good">mil millones</span>
+      <span class="why">El billón español es 10<sup>12</sup>; el <i>billion</i> inglés, 10<sup>9</sup>. Error de ×1000. También vale <i>millardo</i>.</span></div>
+    <div class="fig"><span class="en">trillion</span><span class="bad">trillón</span><span class="arrow">→</span><span class="good">billón</span>
+      <span class="why">El trillón español es 10<sup>18</sup>; el <i>trillion</i> inglés, 10<sup>12</sup>. Error de ×1 000 000.</span></div>
+    <div class="fig"><span class="en">1.5 / 1,5</span><span class="bad">alternar los dos</span><span class="arrow">→</span><span class="good">uno solo, en todo el texto</span>
+      <span class="why"><b>Corregido:</b> la RAE admite coma <i>y</i> punto como separador decimal, y es.wiki también. El punto no es un error; lo delator es alternarlos.</span></div>
+    <div class="fig"><span class="en">1,000</span><span class="bad">1,000 · 1.000</span><span class="arrow">→</span><span class="good">1000 · 1 000</span>
+      <span class="why"><b>Corregido:</b> la norma vigente no admite ni coma ni punto como separador de millares, solo el espacio fino. «1.000», que casi todos damos por bueno, también quedó fuera de norma.</span></div>
+    <div class="fig"><span class="en">$50</span><span class="bad">$50</span><span class="arrow">→</span><span class="good">50 USD · 50 dólares</span>
+      <span class="why">El símbolo <code>$</code> sin marca de país es ambiguo en América.</span></div>
+    <div class="fig"><span class="en">miles · pounds · °F</span><span class="bad">sin convertir</span><span class="arrow">→</span><span class="good">km · kg · °C</span>
+      <span class="why">Unidades imperiales intactas: la fuente era inglesa y nadie revisó.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2><span class="num">08</span>Cómo leerlo</h2>
+  <div class="col">
+    <p>Un calco aislado no prueba nada. Escribimos <code>severo</code> por <i>grave</i> desde mucho antes de que existieran los modelos de lenguaje. <strong>La señal está en la densidad y en la mezcla:</strong> seis o siete calcos de nivel «no consta» en mil palabras, repartidos entre verbos, adjetivos y locuciones, es un perfil que un redactor nativo no produce, porque cada persona tiene sus propios vicios y no todos a la vez.</p>
+    <p>Y conviene mirar en la dirección contraria. Estas marcas apuntan a una mano humana:</p>
+  </div>
+  <ul class="plain col">
+    <li><b>Marca dialectal.</b> Voseo, léxico peninsular o americano, un giro local. El modelo escribe un «español neutro» que nadie habla en ningún sitio.</li>
+    <li><b>Ortotipografía española sostenida.</b> Comillas latinas, raya sin espacio interior, títulos en minúscula. Cuesta esfuerzo y no se hace por accidente.</li>
+    <li><b>Sujeto elidido.</b> Una cadena de «Él nació… Él estudió… Él publicó» viene traducida del inglés.</li>
+    <li><b>Registro irregular.</b> Una frase larga y torpe junto a otra afilada. La máquina produce oraciones de longitud sospechosamente uniforme.</li>
+    <li><b>Errores humanos.</b> Una tilde olvidada, una concordancia mal cerrada. Los modelos no cometen esos fallos, cometen otros.</li>
+  </ul>
+</section>
+
+<footer>
+  <p>La selección de entradas se cruzó con la lista de falsos amigos EN-ES de <a href="https://www.espanoljuridico.com/wp-content/uploads/2024/02/Falsos-amigos-EN-ES.pdf">Español Jurídico</a>, que por venir de la traducción profesional recoge calcos atestiguados en texto real. Las acepciones inglesas se citan del <a href="https://dictionary.cambridge.org">Cambridge Dictionary</a>; las españolas y sus listas de sinónimos, del <a href="https://dle.rae.es">Diccionario de la lengua española</a> (RAE-ASALE). Ambos se consultaron entrada por entrada, y cada recambio propuesto se cotejó contra la lista de sinónimos de la palabra que sustituye. Marco conceptual: <a href="https://es.wikipedia.org/wiki/Calco_sem%C3%A1ntico">Calco semántico</a> y <a href="https://es.wikipedia.org/wiki/Anexo:Falsos_amigos">Anexo:Falsos amigos</a>. Sobre <code>remover</code> e <code>ignorar</code>, consultas públicas de la RAE. El <i>Diccionario panhispánico de dudas</i> se citó donde censura una acepción que el DLE sí recoge.</p>
+  <p>Parte II de esta serie: <a href="https://claude.ai/code/artifact/4940c97b-6b8e-4deb-b619-33c565b5166e">Ortotipografía delatora</a>, sobre puntuación y mayúsculas.</p>
+  <p>La asignación de niveles sigue siendo criterio propio, pero ahora cada uno responde a un hecho comprobable: si la acepción consta o no. Fundéu bloquea el acceso automatizado y no pudo consultarse entrada por entrada.</p>
+</footer>
+
+</div>

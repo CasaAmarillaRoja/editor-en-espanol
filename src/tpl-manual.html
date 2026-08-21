@@ -1,0 +1,140 @@
+<title>Manual de dudas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Faustina:ital,wght@0,400;0,600;0,700;1,400&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  :root{
+    --paper:#F7F7F4; --surface:#FFFFFF; --surface2:#FBFBF9;
+    --ink:#17181D; --ink-soft:#474B55; --ink-faint:#6C707A;
+    --rule:#DEDDD7; --rule-soft:#EBEAE5;
+    --indigo:#23407A; --indigo-bg:#E7EBF3;
+    --err:#A4232B; --err-bg:#F7E8E8;
+    --ok:#2F6B4F; --ok-bg:#E6EFE9;
+    --slate:#5B6470; --slate-bg:#E9ECEF;
+    --measure:64ch; --wide:1180px;
+  }
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+    --paper:#14151A; --surface:#1B1D23; --surface2:#191B20;
+    --ink:#E9E7E2; --ink-soft:#B3B7BE; --ink-faint:#8A8E97;
+    --rule:#2E3138; --rule-soft:#24272D;
+    --indigo:#8FA9DC; --indigo-bg:#1D2436;
+    --err:#E7737A; --err-bg:#33201F;
+    --ok:#6FB58D; --ok-bg:#17281F;
+    --slate:#9BA7B5; --slate-bg:#22262C;
+  }}
+  :root[data-theme="dark"]{
+    --paper:#14151A; --surface:#1B1D23; --surface2:#191B20;
+    --ink:#E9E7E2; --ink-soft:#B3B7BE; --ink-faint:#8A8E97;
+    --rule:#2E3138; --rule-soft:#24272D;
+    --indigo:#8FA9DC; --indigo-bg:#1D2436;
+    --err:#E7737A; --err-bg:#33201F;
+    --ok:#6FB58D; --ok-bg:#17281F;
+    --slate:#9BA7B5; --slate-bg:#22262C;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--paper);color:var(--ink);
+    font-family:"IBM Plex Sans","Helvetica Neue",Arial,sans-serif;font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased}
+  .shell{max-width:var(--wide);margin:0 auto;padding:0 28px 100px}
+  header.top{padding:76px 0 38px;border-bottom:2px solid var(--ink);
+    display:flex;flex-direction:column;gap:20px}
+  .eyebrow{font-family:"IBM Plex Mono",monospace;font-size:11.5px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--indigo)}
+  h1{font-family:Faustina,Georgia,serif;font-weight:700;font-size:clamp(2.5rem,6.5vw,4.2rem);
+    line-height:1;letter-spacing:-.02em;margin:0;text-wrap:balance}
+  h1 em{font-style:italic;font-weight:400;color:var(--indigo)}
+  .standfirst{font-family:Faustina,Georgia,serif;font-size:clamp(1.12rem,2.2vw,1.34rem);
+    line-height:1.5;color:var(--ink-soft);max-width:62ch;margin:0}
+  h2{font-family:Faustina,Georgia,serif;font-weight:600;font-size:clamp(1.45rem,3vw,1.95rem);
+    line-height:1.15;margin:0;letter-spacing:-.01em}
+  section{padding-top:60px;display:flex;flex-direction:column;gap:18px;scroll-margin-top:20px}
+  .sec-intro{font-family:Faustina,Georgia,serif;font-size:1.06rem;color:var(--ink-soft);
+    max-width:var(--measure);margin:0;line-height:1.5}
+  p{margin:0}
+  a{color:var(--indigo);text-decoration-thickness:1px;text-underline-offset:2px}
+  a:focus-visible{outline:2px solid var(--indigo);outline-offset:2px;border-radius:2px}
+  b,strong{font-weight:600}
+  code{font-family:"IBM Plex Mono",monospace;font-size:.92em}
+
+  /* ---- llave de veredictos ---- */
+  .llave{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media(min-width:820px){.llave{grid-template-columns:repeat(3,1fr)}}
+  .llave>div{background:var(--surface);padding:17px 19px;display:flex;flex-direction:column;gap:7px}
+  .llave .chip{align-self:flex-start}
+  .llave p{font-size:14.5px;line-height:1.5;color:var(--ink-soft)}
+
+  /* ---- índice ---- */
+  .toc{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule);margin-top:8px}
+  @media(min-width:700px){.toc{grid-template-columns:repeat(2,1fr)}}
+  @media(min-width:1000px){.toc{grid-template-columns:repeat(3,1fr)}}
+  .toc a{background:var(--surface);padding:13px 17px;text-decoration:none;color:var(--ink);
+    font-size:15px;display:flex;align-items:baseline;gap:11px;font-weight:500}
+  .toc a:hover{background:var(--indigo-bg);color:var(--indigo)}
+  .toc .tn{font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--ink-faint);
+    min-width:2.2ch;text-align:right;font-variant-numeric:tabular-nums}
+
+  /* ---- reglas ---- */
+  .reglas{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  @media(min-width:900px){.reglas{grid-template-columns:repeat(2,1fr)}}
+  .regla{background:var(--surface);padding:20px 22px;display:flex;flex-direction:column;gap:12px}
+  .rh{display:flex;align-items:baseline;justify-content:space-between;gap:14px;flex-wrap:wrap}
+  .rh h3{font-family:"IBM Plex Sans",sans-serif;font-size:15.5px;font-weight:600;margin:0;
+    line-height:1.35;color:var(--ink)}
+  .chip{font-family:"IBM Plex Mono",monospace;font-size:10px;letter-spacing:.11em;
+    text-transform:uppercase;padding:3px 7px;white-space:nowrap;font-weight:500;flex:none}
+  .v-err{background:var(--err-bg);color:var(--err)}
+  .v-amb{background:var(--ok-bg);color:var(--ok)}
+  .v-dep{background:var(--slate-bg);color:var(--slate)}
+  .v-ok{background:var(--indigo-bg);color:var(--indigo)}
+
+  .ejs{display:flex;flex-direction:column;gap:6px}
+  .ej{display:flex;gap:11px;align-items:baseline;padding:6px 9px;background:var(--surface2)}
+  .ej .mk{font-family:"IBM Plex Mono",monospace;font-size:9.5px;letter-spacing:.1em;
+    text-transform:uppercase;min-width:3.6ch;padding-top:.25em;flex:none;font-weight:500}
+  .ej .tx{font-family:Faustina,Georgia,serif;font-size:16px;line-height:1.4}
+  .e-mal{box-shadow:inset 3px 0 0 var(--err)}
+  .e-mal .mk{color:var(--err)}
+  .e-mal .tx{color:var(--ink-soft);text-decoration:line-through;text-decoration-color:var(--err);
+    text-decoration-thickness:1px}
+  .e-bien{box-shadow:inset 3px 0 0 var(--ok)}
+  .e-bien .mk{color:var(--ok)}
+  .e-amb{box-shadow:inset 3px 0 0 var(--slate)}
+  .e-amb .mk{color:var(--slate)}
+  .nota{font-size:14px;line-height:1.5;color:var(--ink-soft)}
+  .nota b{color:var(--ink)}
+
+  footer{margin-top:80px;padding-top:24px;border-top:1px solid var(--rule);
+    font-size:14px;color:var(--ink-faint);max-width:var(--measure);
+    display:flex;flex-direction:column;gap:10px}
+  footer a{color:var(--ink-soft)}
+  @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+
+<div class="shell">
+<header class="top">
+  <div class="eyebrow">Estilo y gramática · Español</div>
+  <h1>Manual de <em>dudas</em></h1>
+  <p class="standfirst">{{NREGLAS}} reglas en {{NSEC}} secciones, destiladas del <i>Libro de estilo de la lengua española</i> de la RAE. Cada una dice si algo está mal, si las dos opciones valen o si depende de la zona — porque corregir lo que ya era correcto es el error más frecuente de todos.</p>
+</header>
+
+<section id="uso">
+  <h2>Los tres veredictos</h2>
+  <p class="sec-intro">Al leer el corpus entero aparece un patrón que ningún manual de prohibiciones recoge: en muchísimos casos la norma admite <em>dos</em> soluciones y solo pide coherencia. Por eso cada regla lleva etiqueta.</p>
+  <div class="llave">
+    <div><span class="chip v-err">error</span>
+      <p>Uso censurado por la norma. Corrígelo sin discutir.</p></div>
+    <div><span class="chip v-amb">ambas válidas</span>
+      <p>Las dos formas son correctas. Elige una y mantenla en todo el texto. <b>No lo señales como error.</b></p></div>
+    <div><span class="chip v-dep">depende</span>
+      <p>Varía según la zona, el registro o el sentido. Lo correcto es lo que encaje con el resto del texto.</p></div>
+  </div>
+  <div class="toc">{{TOC}}</div>
+</section>
+
+{{BODY}}
+
+<footer>
+  <p>Destilado de un corpus de 136 ficheros que recogen el <i>Libro de estilo de la lengua española</i> (RAE-ASALE), la <i>Ortografía</i>, la <i>Nueva gramática</i> y el <i>Diccionario panhispánico de dudas</i>. Se leyeron íntegros los ficheros normativos de gramática, ortografía y ortotipografía; quedan sin recorrer línea a línea el glosario de categorías léxicas, las figuras retóricas, la métrica y el diccionario náutico, que son material de consulta y no de norma.</p>
+  <p>Compañeros de estantería: <a href="https://claude.ai/code/artifact/a0707d30-d025-4dac-8dbd-fbae262979a5">Anglicismos delatores</a> y <a href="https://claude.ai/code/artifact/4940c97b-6b8e-4deb-b619-33c565b5166e">Ortotipografía delatora</a>.</p>
+</footer>
+</div>

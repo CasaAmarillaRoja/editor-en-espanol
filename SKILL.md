@@ -99,7 +99,8 @@ veinte que sí lo eran.
 | `references/norma-ortotipografia.md` | Acentuación, coma, punto, comillas, raya, interrogación, mayúsculas, cursiva, cifras, espacios, diálogos |
 | `references/norma-gramatica.md` | Concordancia, pronombres, verbo, relativos, conjunciones, negación, grafías confundibles |
 | `references/cursiva-y-comillas.md` | 56 casos: qué va en cursiva, en «comillas», en redonda o sin resalte |
-| `references/calcos-del-ingles.md` | 92 calcos semánticos con la acepción de Cambridge frente al DLE |
+| `references/calcos-del-ingles.md` | Los 92 calcos en tabla: la acepción en juego, el veredicto y el recambio. Para decidir rápido |
+| `references/calcos-completos.md` | Los mismos 92 **con el artículo entero de los dos diccionarios** — 456 acepciones del DLE y 336 de Cambridge. Ábrelo cuando haya que justificar una corrección o dudes de si el español cubre parte del campo inglés |
 | `references/marcas-de-traduccion.md` | Marcas ortotipográficas y sintácticas de que el texto viene del inglés |
 
 El corpus completo del que sale todo esto, para consultas que las referencias no cubran,
