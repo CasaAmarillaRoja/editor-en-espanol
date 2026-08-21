@@ -28,13 +28,11 @@ Copia la carpeta en `~/.claude/skills/editor-en-espanol/`. Se invoca con
 
 | Fichero | Qué lleva |
 |---|---|
-| `SKILL.md` | El procedimiento: cinco pasadas, los veredictos, qué no se toca nunca |
+| `SKILL.md` | El procedimiento y **los 92 calcos con los dos artículos de diccionario enteros** — 792 acepciones. Van dentro, no en una referencia aparte: lo que el modelo tiene que decidir abrir no se abre |
 | `references/norma-ortotipografia.md` | Acentuación, coma, comillas, raya, mayúsculas, cifras, espacios, diálogos |
 | `references/norma-gramatica.md` | Concordancia, pronombres, verbo, relativos, grafías confundibles |
 | `references/cursiva-y-comillas.md` | 56 casos: cursiva, «comillas», redonda o sin resalte |
-| `references/calcos-del-ingles.md` | 92 calcos en tabla: acepción en juego, veredicto y recambio |
-| `references/calcos-completos.md` | Los mismos con el artículo entero del DLE y de Cambridge: 792 acepciones |
-| `src/` | Los datos verificados (`es_full.json`, `en_full.json`) y los generadores. Regenera las referencias, para que las dos copias no puedan divergir |
+| `src/` | Los datos verificados y los generadores. `build.py` reconstruye las dos skills, para que las copias no puedan divergir |
 | `references/marcas-de-traduccion.md` | Marcas ortotipográficas y sintácticas de origen inglés |
 
 ## Edición para Wikipedia
